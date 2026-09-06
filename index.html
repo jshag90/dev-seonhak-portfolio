@@ -100,6 +100,16 @@ main{padding:56px 0 96px;min-width:0}
 .qa b{font-weight:600;color:var(--signal)}
 .qa code{font-family:var(--mono);font-size:.85em;background:var(--card);border:1px solid var(--rule-soft);border-radius:2px;padding:1px 5px}
 
+/* 저장소 · 데모 링크 (개인 프로젝트용) */
+.proj-links{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.proj-links a{
+  text-decoration:none;font-size:.8rem;color:var(--signal);
+  background:var(--card);border:1px solid var(--rule-soft);
+  border-radius:2px;padding:4px 11px;white-space:nowrap;
+}
+.proj-links a:hover{border-color:var(--signal)}
+.proj-stack{font-family:var(--mono);font-size:.75rem;color:var(--ink-mute);margin-top:9px}
+
 /* ── 제품 UI 캡처 자리 ───────────────────────
    이미지를 넣는 방법:
      1) shots/ 폴더에 캡처 파일을 올립니다.
@@ -164,6 +174,14 @@ main{padding:56px 0 96px;min-width:0}
 .thesis-title{font-size:.97rem;font-weight:600}
 .thesis-note{font-size:.84rem;color:var(--ink-soft);margin-top:6px}
 
+/* 작성 예정 안내 — 내용을 채운 뒤 이 규칙과 마크업을 함께 지웁니다 */
+.draft{
+  border:1px dashed var(--rule);border-radius:2px;background:var(--card);
+  padding:20px 22px;color:var(--ink-mute);
+}
+.draft-label{font-family:var(--mono);font-size:.74rem;color:var(--ink-mute);margin-bottom:5px}
+.draft-body{font-size:.88rem;line-height:1.6}
+
 /* ── 푸터 ───────────────────────────────── */
 .foot{margin-top:76px;padding-top:22px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:.85rem;color:var(--ink-soft)}
 .foot a{color:var(--signal);text-decoration:none}
@@ -217,6 +235,7 @@ main{padding:56px 0 96px;min-width:0}
         <a href="#ml">랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발</a>
         <a href="#backend">보안 제품 백엔드</a>
         <a href="#auth">인증 · 관제 제품</a>
+        <a href="#personal">개인 프로젝트</a>
         <a href="#credentials">학력 · 자격 · 수상</a>
       </nav>
       <div class="rail-contact">
@@ -725,6 +744,52 @@ main{padding:56px 0 96px;min-width:0}
           </dd>
         </dl>
       </article>
+    </section>
+
+    <!-- ══ 개인 프로젝트 ══════════════════════════════════
+         아래 draft 안내 박스를 지우고, 그 밑 주석 처리된
+         article 템플릿을 프로젝트 수만큼 복사해 채우면 됩니다.
+         회사 프로젝트와 같은 문제 / 판단 / 확인 형식입니다.
+    ═══════════════════════════════════════════════════════ -->
+    <section class="block" id="personal">
+      <div class="block-head">
+        <h2>개인 프로젝트</h2>
+        <span>회사 밖에서 만든 것</span>
+      </div>
+
+      <!-- ▼ 내용을 채운 뒤 이 박스는 지워 주세요 ▼ -->
+      <div class="draft">
+        <p class="draft-label">작성 예정</p>
+        <p class="draft-body">
+          개인적으로 만든 프로젝트를 정리하는 자리입니다.
+          아래 HTML 주석 안에 템플릿이 들어 있습니다.
+        </p>
+      </div>
+      <!-- ▲ 여기까지 지우기 ▲ -->
+
+      <!-- ▼ 템플릿: 주석을 풀고 채우세요. 프로젝트마다 하나씩 복사 ▼
+      <article class="proj">
+        <p class="proj-when">2025.03 ~ 2025.06<em>개인 프로젝트</em></p>
+        <h3>프로젝트 이름</h3>
+        <p class="proj-deck">한 줄 요약 — 무엇을 판단한 경우인지</p>
+        <p class="proj-stack">Python · FastAPI · PostgreSQL</p>
+        <div class="proj-links">
+          <a href="https://github.com/jshag90/저장소이름" target="_blank" rel="noopener">저장소 →</a>
+          <a href="https://데모주소" target="_blank" rel="noopener">데모 →</a>
+        </div>
+        <figure class="shot">
+          <img src="shots/personal-01.png" alt="화면 캡처 설명">
+        </figure>
+        <dl class="qa">
+          <dt>문제</dt>
+          <dd>무엇이 불편했고 왜 직접 만들기로 했는지 씁니다.</dd>
+          <dt>판단</dt>
+          <dd>어떤 대안을 비교했고 무엇을 기준으로 골랐는지 씁니다.</dd>
+          <dt>확인</dt>
+          <dd>무엇으로 됐다고 판단했는지 씁니다. 수치가 있으면 함께 적습니다.</dd>
+        </dl>
+      </article>
+      ▲ 템플릿 끝 ▲ -->
     </section>
 
     <!-- ══ 학력 · 자격 · 수상 ═════════════════════════════ -->
