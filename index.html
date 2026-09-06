@@ -121,9 +121,17 @@ main{padding:56px 0 96px;min-width:0}
 /* 이미지가 들어오면 점선 테두리와 안내 문구를 걷어냅니다 */
 .shot:has(img){border-style:solid;border-color:var(--rule-soft)}
 .shot:has(img) figcaption{display:none}
-/* 한 프로젝트에 캡처를 두 장 이상 넣을 때 감싸는 그리드 */
+/* 작은 캡처를 나란히 놓을 때 감싸는 그리드 */
 .shot-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
 .shot-row .shot{margin-top:0}
+/* 클릭하면 원본 크기로 열립니다 */
+.shot a{display:block}
+/* 화면이 조밀해 설명이 필요한 캡처는 captioned 를 함께 붙입니다 */
+.shot.captioned:has(img) figcaption{
+  display:block;min-height:0;padding:9px 13px;text-align:left;
+  color:var(--ink-soft);font-size:.79rem;line-height:1.55;
+  border-top:1px solid var(--rule-soft);
+}
 
 /* 고객사 구축 목록 */
 .sites{margin-top:12px;border-top:1px solid var(--rule-soft)}
@@ -250,11 +258,28 @@ main{padding:56px 0 96px;min-width:0}
 
       <article class="proj">
         <p class="proj-when">2026.06 ~ 현재<em>에스엠테크놀러지</em></p>
-        <h3>랜섬웨어 탐지 모델 고도화</h3>
+        <h3>랜섬웨어 탐지 모델 학습 파이프라인 고도화</h3>
         <p class="proj-deck">학습 데이터를 걸러내는 일이 모델을 만드는 일보다 중요했던 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/ransomware-model.png" alt="랜섬웨어 탐지 모델 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/ransomware-model.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/training-pipeline-01.png" target="_blank" rel="noopener">
+            <img src="shots/training-pipeline-01.png" alt="학습 데이터 전처리 대시보드 — 유사도 분포와 이상치 분포로 신규 수집분을 판정한 결과">
+          </a>
+          <figcaption>신규 수집분을 기존 학습 · 테스트 벡터 80만 건 전체와 1:N 유사도 검색해 판정한 화면입니다.
+            유사도 분포와 이상치 분포를 함께 놓고, 정상 군집을 오염시키는 위장 악성과 어느 군집에도 속하지 않는 OOD 후보를 가려냅니다.</figcaption>
+        </figure>
+        <figure class="shot captioned">
+          <a href="shots/training-pipeline-02.png" target="_blank" rel="noopener">
+            <img src="shots/training-pipeline-02.png" alt="학습 대상 샘플 목록 — 기준 모델과 후보 모델의 점수 차이, 유사도, 이상치, 행위 태그 비교">
+          </a>
+          <figcaption>판정 결과를 샘플 단위로 펼친 화면입니다. 기준 모델과 후보 모델의 점수 차이, 유사도 · 이상치,
+            VT 탐지 수와 행위 태그를 한 줄에 놓고 학습 반영 여부를 결정합니다.</figcaption>
+        </figure>
+        <figure class="shot captioned">
+          <a href="shots/training-pipeline-03.png" target="_blank" rel="noopener">
+            <img src="shots/training-pipeline-03.png" alt="재학습 워크플로우 — 수집부터 선처리, 학습, 후처리, 릴리스까지의 단계">
+          </a>
+          <figcaption>매월 1일 도는 재학습 파이프라인입니다. 위 전처리 판정은 이 중 선처리 단계에서 수행되고,
+            학습 이후 리포트 생성과 모델 아카이빙까지 같은 실행 안에서 이어집니다.</figcaption>
         </figure>
         <dl class="qa">
           <dt>문제</dt>

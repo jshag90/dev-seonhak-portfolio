@@ -23,7 +23,9 @@
 
 | 파일명 | 프로젝트 |
 |---|---|
-| `ransomware-model.png` | 랜섬웨어 탐지 모델 고도화 |
+| `training-pipeline-01.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 전처리 판정 대시보드 |
+| `training-pipeline-02.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 학습 대상 샘플 목록 |
+| `training-pipeline-03.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 재학습 워크플로우 |
 | `malware-analysis.png` | 악성코드 통합 분석 기능 개발 |
 | `pe-similarity-engine.png` | PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발 (Rust 네이티브 인코더 전환 포함) |
 | `rag-docstory.png` | 공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) (MCP 서버 구축 및 도구 연동 포함) |
