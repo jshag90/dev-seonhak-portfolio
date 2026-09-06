@@ -121,6 +121,9 @@ main{padding:56px 0 96px;min-width:0}
 /* 이미지가 들어오면 점선 테두리와 안내 문구를 걷어냅니다 */
 .shot:has(img){border-style:solid;border-color:var(--rule-soft)}
 .shot:has(img) figcaption{display:none}
+/* 한 프로젝트에 캡처를 두 장 이상 넣을 때 감싸는 그리드 */
+.shot-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.shot-row .shot{margin-top:0}
 
 /* 고객사 구축 목록 */
 .sites{margin-top:12px;border-top:1px solid var(--rule-soft)}
@@ -632,10 +635,14 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.02 ~ 2020.06<em>시큐브</em></p>
         <h3>서명 수집 · 분석 시스템 개발</h3>
         <p class="proj-deck">쌓이는 데이터의 성격에 맞게 저장소를 옮긴 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/signature-analysis.png" alt="서명 수집 · 분석 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/signature-analysis.png</code></figcaption>
-        </figure>
+        <div class="shot-row">
+          <figure class="shot">
+            <img src="shots/signature-analysis-01.png" alt="SecuSign 서명 인증 현황 대시보드 — 인증 · 성공 · 거부 집계와 추이 그래프">
+          </figure>
+          <figure class="shot">
+            <img src="shots/signature-analysis-02.png" alt="서명 분석 정보 화면 — 등록 서명과 검증 서명 비교, 특징별 일치도">
+          </figure>
+        </div>
         <dl class="qa">
           <dt>문제</dt>
           <dd>앱과 태블릿에서 수집되는 서명 데이터가 계속 늘어나는데,
@@ -656,10 +663,14 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.06 ~ 2018.08<em>시큐브</em></p>
         <h3>고객사 인증 시스템 구축</h3>
         <p class="proj-deck">같은 코드베이스로 서로 다른 기관 요건을 맞춘 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/customer-deploy.png" alt="고객사 인증 시스템 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/customer-deploy.png</code></figcaption>
-        </figure>
+        <div class="shot-row">
+          <figure class="shot">
+            <img src="shots/customer-deploy-01.png" alt="외교부 웹메일 2차 인증 관리 콘솔 — 부서 목록과 사용자 관리 화면">
+          </figure>
+          <figure class="shot">
+            <img src="shots/customer-deploy-02.png" alt="외교부 웹메일 2차 인증 관리 콘솔 — 인증 현황 대시보드">
+          </figure>
+        </div>
         <dl class="qa">
           <dt>문제</dt>
           <dd>공공 · 금융 고객사가 연달아 인증 시스템을 도입했는데, 기관마다 요구하는 정책과 운영 환경이 달랐습니다.

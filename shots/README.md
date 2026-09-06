@@ -38,8 +38,28 @@
 | `multimodal-auth.png` | 멀티모달 인증 시스템 개발 |
 | `otp-console.png` | OTP 인증 웹 관리 콘솔 개발 |
 | `demo-site.png` | 인증 솔루션 연동 데모 사이트 개발 |
-| `signature-analysis.png` | 서명 수집 · 분석 시스템 개발 |
-| `customer-deploy.png` | 고객사 인증 시스템 구축 |
+| `signature-analysis-01.png` ✅ | 서명 수집 · 분석 시스템 개발 — 인증 현황 대시보드 |
+| `signature-analysis-02.png` ✅ | 서명 수집 · 분석 시스템 개발 — 서명 분석 정보 |
+| `customer-deploy-01.png` ✅ | 고객사 인증 시스템 구축 — 사용자 관리 |
+| `customer-deploy-02.png` ✅ | 고객사 인증 시스템 구축 — 인증 현황 대시보드 |
+
+✅ 표시는 이미 적용된 이미지입니다.
+
+## 한 프로젝트에 두 장 이상 넣기
+
+`figure.shot`을 `div.shot-row`로 감싸면 나란히 배치됩니다. 화면이 좁아지면 자동으로 세로로 쌓입니다.
+
+```html
+<div class="shot-row">
+  <figure class="shot"><img src="shots/customer-deploy-01.png" alt="..."></figure>
+  <figure class="shot"><img src="shots/customer-deploy-02.png" alt="..."></figure>
+</div>
+```
+
+## 파일명 규칙
+
+한글 파일명은 시스템마다 유니코드 정규화 방식(NFC/NFD)이 달라 GitHub Pages에서 404가 날 수 있습니다.
+영문 소문자와 하이픈만 쓰는 편이 안전합니다.
 
 파일명은 자유롭게 바꿔도 됩니다. 바꿀 경우 `index.html`의 `src` 값도 같이 고쳐주세요.
 
