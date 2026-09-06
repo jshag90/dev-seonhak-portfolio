@@ -100,7 +100,7 @@ main{padding:56px 0 96px;min-width:0}
 .qa b{font-weight:600;color:var(--signal)}
 .qa code{font-family:var(--mono);font-size:.85em;background:var(--card);border:1px solid var(--rule-soft);border-radius:2px;padding:1px 5px}
 
-/* 사이트 · 저장소 링크와 기술 스택 한 줄 (외주 개발 항목용) */
+/* 사이트 · 저장소 링크와 기술 스택 한 줄 (개인 프로젝트 항목용) */
 .proj-links{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
 .proj-links a{
   text-decoration:none;font-size:.8rem;color:var(--signal);
@@ -136,6 +136,8 @@ main{padding:56px 0 96px;min-width:0}
 .shot-row .shot{margin-top:0}
 /* 클릭하면 원본 크기로 열립니다 */
 .shot a{display:block}
+/* 휴대폰 세로 캡처 — 폭을 제한하지 않으면 본문을 통째로 차지합니다 */
+.shot--phone{max-width:296px}
 /* 화면이 조밀해 설명이 필요한 캡처는 captioned 를 함께 붙입니다 */
 .shot.captioned:has(img) figcaption{
   display:block;min-height:0;padding:9px 13px;text-align:left;
@@ -235,7 +237,7 @@ main{padding:56px 0 96px;min-width:0}
         <a href="#ml">머신러닝/RAG</a>
         <a href="#backend">보안 제품 백엔드</a>
         <a href="#auth">인증 · 관제 제품</a>
-        <a href="#personal">외주 개발</a>
+        <a href="#personal">개인 프로젝트</a>
         <a href="#credentials">학력 · 자격 · 수상</a>
       </nav>
       <div class="rail-contact">
@@ -746,18 +748,18 @@ main{padding:56px 0 96px;min-width:0}
       </article>
     </section>
 
-    <!-- ══ 외주 개발 ═════════════════════════════════════
+    <!-- ══ 개인 프로젝트 ══════════════════════════════════
          아래 세 항목의 문제 / 판단 / 확인은 본인만 아는 내용이라
          비워 두었습니다. 회사 프로젝트와 같은 형식으로 채우면 됩니다.
     ═══════════════════════════════════════════════════════ -->
     <section class="block" id="personal">
       <div class="block-head">
-        <h2>외주 개발</h2>
-        <span>지인 회사 홈페이지 · 시스템</span>
+        <h2>개인 프로젝트</h2>
+        <span>지인 회사 홈페이지 · 시스템 개발</span>
       </div>
 
       <article class="proj">
-        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <p class="proj-when">한국안전원(주)</p>
         <h3>한국안전원(주) 웹사이트</h3>
         <p class="proj-deck">고용노동부 지정 안전관리전문기관의 대외 홈페이지</p>
         <div class="proj-links">
@@ -779,7 +781,7 @@ main{padding:56px 0 96px;min-width:0}
       </article>
 
       <article class="proj">
-        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <p class="proj-when">한국안전원(주)</p>
         <h3>한국안전원(주) 에듀센터</h3>
         <p class="proj-deck">안전보건교육 수강과 이수를 관리하는 LMS</p>
         <div class="proj-links">
@@ -801,7 +803,7 @@ main{padding:56px 0 96px;min-width:0}
       </article>
 
       <article class="proj">
-        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <p class="proj-when">한국안전원(주)</p>
         <h3>종사자 의견 QR 수집시스템</h3>
         <p class="proj-deck">현장 종사자가 QR을 찍어 바로 의견을 남기는 수집 창구</p>
         <div class="proj-links">
@@ -813,11 +815,22 @@ main{padding:56px 0 96px;min-width:0}
           </a>
           <figcaption>QR 배포 화면. 대행 · 민간위탁 · 컨설팅 세 가지 사업장 유형별로 QR을 따로 두었습니다.</figcaption>
         </figure>
+        <figure class="shot shot--phone captioned">
+          <a href="shots/personal-koosi-qr-form.jpg" target="_blank" rel="noopener">
+            <img src="shots/personal-koosi-qr-form.jpg" alt="QR을 스캔하면 열리는 의견 등록 화면 — 기본 정보, 의견 분류, 상세 의견과 사진 첨부">
+          </a>
+          <figcaption>QR을 찍으면 바로 열리는 화면입니다. 앱 설치나 로그인 없이 모바일 웹에서 그대로 작성합니다.</figcaption>
+        </figure>
         <dl class="qa">
           <dt>구성</dt>
           <dd>사업장에 부착한 QR을 종사자가 휴대폰으로 찍으면 곧바로 의견 입력 화면으로 연결됩니다.
               <b>대행사업장 · 민간위탁사업장 · 컨설팅사업장</b> 세 유형의 QR을 따로 발급해,
-              들어온 의견이 어느 유형에서 왔는지 진입 단계에서 나뉩니다.</dd>
+              들어온 의견이 어느 유형에서 왔는지 진입 단계에서 나뉩니다.
+              입력 화면은 기본 정보 · 의견 분류 · 상세 의견 세 단으로 나눴고,
+              회사명 옆에 <b>익명 체크</b>를 두어 신원을 밝히지 않고도 제출할 수 있게 했습니다.
+              의견제시사유는 산업재해 · 아차사고 · 안전개선으로, 위험발생유형은 추락 · 충돌 · 협착 · 끼임 · 미끄럼 ·
+              화학물질 · 감전 · 화재 · 기타로 항목을 고정해 선택만으로 분류되게 했습니다.
+              현장 상황은 글로 옮기기 어려운 경우가 많아 <b>사진을 최대 10장까지</b> 붙일 수 있습니다.</dd>
         </dl>
       </article>
     </section>

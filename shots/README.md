@@ -44,9 +44,10 @@
 | `signature-analysis-02.png` ✅ | 서명 수집 · 분석 시스템 개발 — 서명 분석 정보 |
 | `customer-deploy-01.png` ✅ | 고객사 인증 시스템 구축 — 사용자 관리 |
 | `customer-deploy-02.png` ✅ | 고객사 인증 시스템 구축 — 인증 현황 대시보드 |
-| `personal-koosi-main.png` ✅ | 외주 — 한국안전원(주) 웹사이트 |
-| `personal-koosi-edu.png` ✅ | 외주 — 한국안전원(주) 에듀센터 |
-| `personal-koosi-qr.png` ✅ | 외주 — 종사자 의견 QR 수집시스템 |
+| `personal-koosi-main.png` ✅ | 개인 프로젝트 — 한국안전원(주) 웹사이트 |
+| `personal-koosi-edu.png` ✅ | 개인 프로젝트 — 한국안전원(주) 에듀센터 |
+| `personal-koosi-qr.png` ✅ | 개인 프로젝트 — 종사자 의견 QR 배포 화면 |
+| `personal-koosi-qr-form.jpg` ✅ | 개인 프로젝트 — QR 스캔 후 의견 등록 화면 (모바일) |
 
 ✅ 표시는 이미 적용된 이미지입니다.
 
