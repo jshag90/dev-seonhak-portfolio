@@ -60,7 +60,7 @@ dl,dd{margin:0}
 .rail-name{font-size:1.55rem;font-weight:700;letter-spacing:-0.03em}
 .rail-role{color:var(--ink-soft);font-size:.9rem;margin-top:4px}
 .rail-nav{margin-top:26px;border-top:1px solid var(--rule);padding-top:14px}
-.rail-nav a{display:block;text-decoration:none;color:var(--ink-soft);font-size:.88rem;padding:4px 0}
+.rail-nav a{display:block;text-decoration:none;color:var(--ink-soft);font-size:.88rem;padding:5px 0;line-height:1.45}
 .rail-nav a:hover{color:var(--signal)}
 .rail-contact{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px;font-size:.85rem;color:var(--ink-soft)}
 .rail-contact a{display:block;padding:3px 0;text-decoration:none}
@@ -69,10 +69,10 @@ dl,dd{margin:0}
 /* ── 본문 공통 ───────────────────────────── */
 main{padding:56px 0 96px;min-width:0}
 .block{margin-top:64px}
-.block-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+.block-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-bottom:22px}
 .block-head h2{font-size:1.22rem}
-.block-head span{color:var(--ink-soft);font-size:.83rem}
-.block-head::after{content:"";flex:1;height:1px;background:var(--rule)}
+.block-head span{color:var(--ink-soft);font-size:.83rem;white-space:nowrap}
+.block-head::after{content:"";flex:1 1 40px;height:1px;background:var(--rule)}
 
 /* ── 히어로 ───────────────────────────── */
 .lede{font-size:clamp(1.6rem,3.6vw,2.35rem);letter-spacing:-0.04em;line-height:1.32;max-width:20ch}
@@ -202,7 +202,7 @@ main{padding:56px 0 96px;min-width:0}
       <p class="rail-role">백엔드 · 보안 ML 개발자</p>
       <nav class="rail-nav">
         <a href="#record">측정 기록</a>
-        <a href="#ml">[ML/RAG 관련]</a>
+        <a href="#ml">[랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발]</a>
         <a href="#backend">보안 제품 백엔드</a>
         <a href="#auth">인증 · 관제 제품</a>
         <a href="#credentials">학력 · 자격 · 수상</a>
@@ -320,10 +320,10 @@ main{padding:56px 0 96px;min-width:0}
       <p class="ledger-cap">막대는 개선 전 대비 개선 후 비율입니다. 짧을수록 개선 폭이 큽니다.</p>
     </section>
 
-    <!-- ══ [ML/RAG 관련] ══════════════════════════════════ -->
+    <!-- ══ 랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발 ═══ -->
     <section class="block" id="ml">
       <div class="block-head">
-        <h2>[ML/RAG 관련]</h2>
+        <h2>[랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발]</h2>
         <span>에스엠테크놀러지 · 2025.02 ~ 현재</span>
       </div>
 
@@ -816,7 +816,7 @@ main{padding:56px 0 96px;min-width:0}
           정보보호 석사 과정에서 연구한 주제입니다.
           여기서 다룬 정적 · 동적 하이브리드 분석과 기계 학습 탐지를
           지금은 실제 제품의 탐지 엔진으로 구현하고 있습니다.
-          위 <a href="#ml" style="color:var(--signal)">[ML/RAG 관련]</a> 항목이 그 연장선입니다.
+          위 <a href="#ml" style="color:var(--signal)">머신러닝 엔진 개발</a> 항목이 그 연장선입니다.
         </p>
       </div>
     </section>
