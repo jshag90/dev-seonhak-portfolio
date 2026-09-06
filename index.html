@@ -25,7 +25,6 @@
   --rule-soft:#DFE3E7;
   --signal:#0C6B5C;
   --signal-bg:#DCEAE6;
-  --before:#AEB8C1;
   --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Malgun Gothic",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
@@ -41,10 +40,12 @@ h1,h2,h3{margin:0;line-height:1.32;letter-spacing:-0.025em;font-weight:700}
 p{margin:0}
 ul{margin:0;padding:0;list-style:none}
 dl,dd{margin:0}
+figure{margin:0}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:20}
 .skip:focus{left:0}
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
 
 .shell{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:250px 1fr;gap:56px;align-items:start}
 
@@ -81,32 +82,6 @@ main{padding:56px 0 96px;min-width:0}
 .hero-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 10px;font-size:.84rem;color:var(--ink-soft)}
 .hero-meta li{background:var(--card);border:1px solid var(--rule-soft);border-radius:2px;padding:4px 10px}
 
-/* ── 측정 기록 표 ───────────────────────── */
-.ledger{border-top:1px solid var(--ink)}
-.ledger-row{
-  display:grid;grid-template-columns:1fr 176px 132px;gap:20px;align-items:center;
-  padding:15px 0;border-bottom:1px solid var(--rule-soft);
-}
-.ledger-what{font-weight:600;font-size:.97rem}
-.ledger-how{display:block;font-weight:400;color:var(--ink-soft);font-size:.83rem;margin-top:2px}
-.ledger-nums{font-family:var(--mono);font-size:.9rem;white-space:nowrap;font-variant-numeric:tabular-nums}
-.ledger-nums .b{color:var(--before);text-decoration:line-through;text-decoration-thickness:1px}
-.ledger-nums .sep{color:var(--rule);padding:0 6px}
-.ledger-nums .a{color:var(--signal);font-weight:500}
-.bar{height:7px;background:var(--signal-bg);border-radius:1px;position:relative;overflow:hidden}
-.bar i{
-  position:absolute;top:0;bottom:0;left:0;background:var(--signal);
-  width:var(--w);transform:scaleX(0);transform-origin:left;
-  animation:draw .9s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:var(--d,0s);
-}
-@keyframes draw{to{transform:scaleX(1)}}
-.bar-note{font-size:.75rem;color:var(--ink-soft);margin-top:6px;font-family:var(--mono)}
-.ledger-cap{margin-top:14px;font-size:.82rem;color:var(--ink-soft)}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .bar i{animation:none;transform:scaleX(1)}
-}
-
 /* ── 프로젝트 판단 기록 ─────────────────── */
 .proj{position:relative;padding:0 0 38px 138px;border-left:1px solid var(--rule);margin-left:4px}
 .proj:last-child{padding-bottom:0}
@@ -123,6 +98,28 @@ main{padding:56px 0 96px;min-width:0}
 .qa dd{font-size:.92rem}
 .qa b{font-weight:600;color:var(--signal)}
 .qa code{font-family:var(--mono);font-size:.85em;background:var(--card);border:1px solid var(--rule-soft);border-radius:2px;padding:1px 5px}
+
+/* ── 제품 UI 캡처 자리 ───────────────────────
+   이미지를 넣는 방법:
+     1) shots/ 폴더에 캡처 파일을 올립니다.
+     2) 해당 항목의 <img> 주석을 풀면 끝입니다.
+        (안내 문구는 자동으로 사라집니다)
+   쓰지 않을 자리는 figure.shot 블록째 지우면 됩니다.
+──────────────────────────────────────────── */
+.shot{
+  margin-top:16px;border:1px dashed var(--rule);background:var(--card);
+  border-radius:2px;overflow:hidden;
+}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{
+  min-height:170px;padding:16px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;
+  color:#9AA6B0;font-size:.76rem;text-align:center;line-height:1.6;
+}
+.shot figcaption code{font-family:var(--mono);font-size:.92em;color:var(--ink-mute)}
+/* 이미지가 들어오면 점선 테두리와 안내 문구를 걷어냅니다 */
+.shot:has(img){border-style:solid;border-color:var(--rule-soft)}
+.shot:has(img) figcaption{display:none}
 
 /* 고객사 구축 목록 */
 .sites{margin-top:12px;border-top:1px solid var(--rule-soft)}
@@ -171,13 +168,13 @@ main{padding:56px 0 96px;min-width:0}
 }
 @media(max-width:680px){
   body{font-size:15px}
-  .ledger-row{grid-template-columns:1fr;gap:8px;padding:16px 0}
   .proj{padding-left:0;border-left:0;margin-left:0}
   .proj-when{position:static;width:auto;padding-left:0;margin-bottom:6px}
   .proj-when::before{display:none}
   .proj-when em{display:inline;margin-left:8px}
   .qa{grid-template-columns:1fr;gap:2px 0}
   .qa dt{padding-top:.5em}
+  .shot figcaption{min-height:130px}
   .sites-top{flex-direction:column;gap:2px}
   .cred-list li{flex-direction:column;gap:2px}
 }
@@ -189,8 +186,12 @@ main{padding:56px 0 96px;min-width:0}
 <div class="shell">
 
   <!-- ══════════════════════════════════════════════════════
-       사진: 아래 photo 영역의 <img> 주석을 풀고,
-             저장소 루트에 profile.jpg 를 올리면 됩니다.
+       이미지 넣는 곳 두 가지
+       1) 프로필 사진 : 아래 photo 영역의 <img> 주석을 풀고
+                        저장소 루트에 profile.jpg 를 올립니다.
+       2) 제품 UI 캡처 : 각 프로젝트 제목 아래 figure.shot 영역.
+                        shots/ 폴더에 파일을 올리고 <img> 주석을 풀면
+                        안내 문구가 자동으로 사라집니다.
   ═══════════════════════════════════════════════════════ -->
   <aside class="rail">
     <div class="photo">
@@ -201,7 +202,6 @@ main{padding:56px 0 96px;min-width:0}
       <p class="rail-name">지선학</p>
       <p class="rail-role">백엔드 · 보안 ML 개발자</p>
       <nav class="rail-nav">
-        <a href="#record">측정 기록</a>
         <a href="#ml">[랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발]</a>
         <a href="#backend">보안 제품 백엔드</a>
         <a href="#auth">인증 · 관제 제품</a>
@@ -237,89 +237,6 @@ main{padding:56px 0 96px;min-width:0}
       </ul>
     </section>
 
-    <!-- ══ 측정 기록 ══════════════════════════════════════ -->
-    <section class="block" id="record">
-      <div class="block-head">
-        <h2>측정 기록</h2>
-        <span>판단의 근거로 쓴 값</span>
-      </div>
-
-      <div class="ledger">
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">PE 유사도 검색 60만 건</p>
-            <span class="ledger-how">INT8로 후보를 좁히고 코사인으로 재정렬하는 2단계 검색</span>
-          </div>
-          <p class="ledger-nums"><span class="b">13.73초</span><span class="sep">→</span><span class="a">0.66초</span></p>
-          <div>
-            <div class="bar"><i style="--w:5%;--d:.15s"></i></div>
-            <p class="bar-note">5%</p>
-          </div>
-        </div>
-
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">정상 실행파일 과탐 점수</p>
-            <span class="ledger-how">2단계 전처리 필터와 denylist 선차단 구조 도입</span>
-          </div>
-          <p class="ledger-nums"><span class="b">0.99</span><span class="sep">→</span><span class="a">0.0003</span></p>
-          <div>
-            <div class="bar"><i style="--w:2%;--d:.3s"></i></div>
-            <p class="bar-note">0.03%</p>
-          </div>
-        </div>
-
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">RAG 응답 시간</p>
-            <span class="ledger-how">서빙툴 벤치마크 후 ollama → vLLM 전환</span>
-          </div>
-          <p class="ledger-nums"><span class="b">15.3초</span><span class="sep">→</span><span class="a">6.7초</span></p>
-          <div>
-            <div class="bar"><i style="--w:44%;--d:.45s"></i></div>
-            <p class="bar-note">44%</p>
-          </div>
-        </div>
-
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">임베딩 인덱스 저장 용량</p>
-            <span class="ledger-how">EMBER 2,381차원을 MLP 인코더로 128차원 압축</span>
-          </div>
-          <p class="ledger-nums"><span class="b">100%</span><span class="sep">→</span><span class="a">15%</span></p>
-          <div>
-            <div class="bar"><i style="--w:15%;--d:.6s"></i></div>
-            <p class="bar-note">15%</p>
-          </div>
-        </div>
-
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">추론 런타임 의존성</p>
-            <span class="ledger-how">Scaler · BatchNorm을 융합한 Rust 네이티브 인코더로 전환</span>
-          </div>
-          <p class="ledger-nums"><span class="b">DLL 200MB</span><span class="sep">→</span><span class="a">0MB</span></p>
-          <div>
-            <div class="bar"><i style="--w:73%;--d:.75s"></i></div>
-            <p class="bar-note">추론 27% 개선</p>
-          </div>
-        </div>
-
-        <div class="ledger-row">
-          <div>
-            <p class="ledger-what">RAG GPU 환경별 응답 시간</p>
-            <span class="ledger-how">동일 파이프라인을 GPU만 바꿔 측정, 증설 근거로 제출</span>
-          </div>
-          <p class="ledger-nums"><span class="b">155초</span><span class="sep">→</span><span class="a">15.3초</span></p>
-          <div>
-            <div class="bar"><i style="--w:10%;--d:.9s"></i></div>
-            <p class="bar-note">약 10배</p>
-          </div>
-        </div>
-      </div>
-      <p class="ledger-cap">막대는 개선 전 대비 개선 후 비율입니다. 짧을수록 개선 폭이 큽니다.</p>
-    </section>
-
     <!-- ══ 랜섬웨어 차단 솔루션 백엔드 및 머신러닝 엔진 개발 ═══ -->
     <section class="block" id="ml">
       <div class="block-head">
@@ -331,6 +248,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2026.06 ~ 현재<em>에스엠테크놀러지</em></p>
         <h3>랜섬웨어 탐지 모델 고도화</h3>
         <p class="proj-deck">학습 데이터를 걸러내는 일이 모델을 만드는 일보다 중요했던 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/ransomware-model.png" alt="랜섬웨어 탐지 모델 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/ransomware-model.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>매월 재학습되는 모델에서 <b>지표는 올라가는데 현장에서는 정상 파일이 차단되는</b> 상황이 반복됐습니다.
@@ -343,7 +264,7 @@ main{padding:56px 0 96px;min-width:0}
               완전 이상치는 오매칭 위험이 더 크다고 판단해 SHA-256만 저장했습니다.</dd>
           <dt>확인</dt>
           <dd>정상 PE를 기준선으로 등록해 버전별 과탐 드리프트를 감시하는 체계를 만들었고,
-              이전 모델이 0.99로 과탐하던 정상 실행파일이 <b>0.0003</b>으로 내려갔습니다.
+              이전 모델이 <b>0.99</b>로 과탐하던 정상 실행파일이 <b>0.0003</b>으로 내려갔습니다.
               오탐이 나면 원인 피처까지 역추적해 버전 간 회귀 여부를 기록으로 남깁니다.</dd>
         </dl>
       </article>
@@ -352,6 +273,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2026.06 ~ 현재<em>에스엠테크놀러지</em></p>
         <h3>악성코드 통합 분석 기능 개발</h3>
         <p class="proj-deck">확률 하나로는 왜 차단했는지 설명할 수 없었던 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/malware-analysis.png" alt="악성코드 통합 분석 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/malware-analysis.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>탐지 결과가 단일 확률값이라 분석 담당자가 <b>판정 근거를 확인할 방법이 없었습니다.</b>
@@ -371,6 +296,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2026.03 ~ 2026.05<em>에스엠테크놀러지</em></p>
         <h3>PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발</h3>
         <p class="proj-deck">재학습이 답이 아니라고 판단해 문제를 다시 정의한 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/pe-similarity-engine.png" alt="PE 유사도 검색 엔진 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/pe-similarity-engine.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>LightGBM이 예측 확률 <code>0.3~0.5</code> 구간에서 정상 파일을 차단하는 오탐이 반복됐습니다.
@@ -385,7 +314,8 @@ main{padding:56px 0 96px;min-width:0}
               Vector DB는 4종(sqlite-vec · hnsw_rs · faiss-hnsw · usearch)을 벤치마크한 뒤
               가장 빠른 것이 아니라 설치형 배포에 부담이 없는 sqlite-vec을 택했습니다.</dd>
           <dt>확인</dt>
-          <dd>인코더 ROC-AUC 0.93, KNN(K=5) 95.4%. 2단계 검색으로 <b>60만 건 쿼리 13.73초 → 0.66초</b>, 저장 용량 85% 절감.
+          <dd>인코더 ROC-AUC 0.93, KNN(K=5) 95.4%. INT8로 후보를 좁히고 코사인으로 재정렬하는 2단계 검색으로
+              <b>60만 건 쿼리 13.73초 → 0.66초</b>, 저장 용량 <b>85% 절감</b>.
               전체 파이프라인을 처음부터 재실행해 재현성까지 확인했습니다(ROC-AUC +0.9%).</dd>
         </dl>
       </article>
@@ -394,6 +324,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2026.03 ~ 2026.05<em>위 엔진 세부 과제</em></p>
         <h3>Rust 네이티브 인코더 전환</h3>
         <p class="proj-deck">실무 경험 없는 언어를 쓰기 위해 채택 기준을 먼저 정한 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/rust-encoder.png" alt="Rust 네이티브 인코더 벤치마크 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/rust-encoder.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>자사 에이전트가 Rust로 리뉴얼된 상태였는데, 추론에 쓰던 ONNX Runtime은
@@ -404,7 +338,8 @@ main{padding:56px 0 96px;min-width:0}
               낯선 언어일수록 "동작한다"가 아니라 <b>"기존과 같은 값을 낸다"</b>가 기준이어야 한다고 판단했습니다.
               Scaler와 BatchNorm을 융합해 전처리까지 네이티브로 옮겼고, 설계와 알고리즘 선정, 성능 검증은 직접 했습니다.</dd>
           <dt>확인</dt>
-          <dd>기존 구현 대비 출력 오차 <code>max 1e-7</code>까지 대조 검증했습니다. 추론 27% 개선, 200MB DLL 제거.</dd>
+          <dd>기존 구현 대비 출력 오차 <code>max 1e-7</code>까지 대조 검증했습니다.
+              <b>추론 27% 개선</b>, 200MB DLL 제거로 런타임 의존성을 0으로 만들었습니다.</dd>
         </dl>
       </article>
 
@@ -412,6 +347,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2025.11 ~ 2026.02<em>에스엠테크놀러지</em></p>
         <h3>공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) 설계 및 개발</h3>
         <p class="proj-deck">폐쇄망과 소형 모델이라는 제약 안에서 정확도를 올린 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/rag-docstory.png" alt="DocStory Insight 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/rag-docstory.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>공공기관 내부 문서를 다뤄야 해서 외부 API를 쓸 수 없었고, 로컬에서 돌릴 수 있는 소형 모델은
@@ -425,7 +364,8 @@ main{padding:56px 0 96px;min-width:0}
               환각은 없앨 수 없다고 보고 검증 가능하게 만드는 쪽을 택해, 참고한 청크 목록과 실제 문서 경로를 응답과 함께 표시했습니다.</dd>
           <dt>확인</dt>
           <dd>전처리 포맷 정규화 수준에 따른 정확도 상승을 실측했고, 서빙툴 · GPU별 벤치마크로 증설 근거를 만들었습니다
-              (<b>ollama 15.3초 → vLLM 6.7초</b>, GTX 1050 155초 → RTX 3050 15.3초). 이 자료가 하드웨어 투자 판단에 쓰였습니다.</dd>
+              (<b>ollama 15.3초 → vLLM 6.7초</b>, GTX 1050 155초 → RTX 3050 15.3초로 약 10배).
+              이 자료가 하드웨어 투자 판단에 쓰였습니다.</dd>
         </dl>
       </article>
 
@@ -433,6 +373,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2025.11 ~ 2026.02<em>위 에이전트 세부 과제</em></p>
         <h3>MCP 서버 구축 및 도구 연동</h3>
         <p class="proj-deck">LLM이 모르는 정보를 학습이 아니라 도구로 채운 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/mcp-server.png" alt="MCP 서버 도구 연동 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/mcp-server.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>폐쇄망 소형 모델은 자사 솔루션 정보도, 최신 위협 인텔리전스도 알지 못했습니다.
@@ -454,6 +398,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2025.02 ~ 2025.03<em>에스엠테크놀러지</em></p>
         <h3>PE 정적 파일 학습 데이터 기반 악성코드 예측 머신러닝 서버 개발</h3>
         <p class="proj-deck">모델을 바꾸려고 제품을 재배포하지 않게 만든 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/ml-predict-api.png" alt="악성코드 예측 API 서버 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/ml-predict-api.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>모델이 주기적으로 재학습되는데 교체할 때마다 서버를 다시 배포해야 했습니다.
@@ -480,6 +428,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2024.07 ~ 2024.12<em>에스엠테크놀러지</em></p>
         <h3>인사 DB 연동 기반 부서별 솔루션 정책 관리 기능 개발</h3>
         <p class="proj-deck">정책 단위를 바꾸면서 조회 부하가 옮겨간 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/dept-policy.png" alt="부서별 정책 관리 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/dept-policy.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>보안 정책이 클라이언트(에이전트) 단위로만 걸려서, 조직이 큰 고객사에서는 관리가 현실적으로 어려웠습니다.</dd>
@@ -497,6 +449,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2022.12 ~ 2023.12<em>에스엠테크놀러지</em></p>
         <h3>디자인 패턴 적용 및 성능 개선 리팩터링, 테스트 코드 작성</h3>
         <p class="proj-deck">증상은 하나인데 원인이 둘이었던 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/log-query-perf.png" alt="대용량 로그 조회 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/log-query-perf.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>대용량 로그 조회가 뒤 페이지로 갈수록 느려졌고, 같은 화면에서 count 쿼리도 함께 느렸습니다.
@@ -519,6 +475,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2022.01 ~ 2022.12<em>에스엠테크놀러지</em></p>
         <h3>백엔드 팀 개발 환경 개선</h3>
         <p class="proj-deck">코드 리뷰와 배포를 사람 손에서 떼어낸 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/devops-gitlab-jenkins.png" alt="GitLab · Jenkins 파이프라인 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/devops-gitlab-jenkins.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>형상 관리 체계와 브랜치 전략이 자리잡지 않아 코드 리뷰를 걸 지점이 없었고,
@@ -536,6 +496,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2022.01 ~ 2022.06<em>에스엠테크놀러지</em></p>
         <h3>자사 솔루션 PHP 웹 서버의 Spring Boot 리뉴얼</h3>
         <p class="proj-deck">다시 만들 기회에 확장 지점을 미리 잡은 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/spring-renewal.png" alt="Spring Boot 리뉴얼 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/spring-renewal.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>PHP 레거시 웹 서버를 Spring Boot로 옮기는 작업이었습니다.
@@ -554,6 +518,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2020.12 ~ 2022.12<em>에스엠테크놀러지</em></p>
         <h3>자사 솔루션 국정원 보안적합성 검증 시험 프로젝트</h3>
         <p class="proj-deck">나눈 뒤에도 서로의 구현을 알고 있어야 했던 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/security-verification.png" alt="보안적합성 검증 관련 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/security-verification.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>국가 · 공공기관 납품의 필수 관문인 국가정보원 보안적합성 검증이었고,
@@ -580,6 +548,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2020.06 ~ 2020.10<em>소테리아</em></p>
         <h3>서울사이버안전센터 AI 비정상 행위 탐지 솔루션 실증사업 (침해 대응 애플리케이션)</h3>
         <p class="proj-deck">탐지가 발생한 순간에 전달돼야 했던 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/seoul-cyber-app.png" alt="침해 대응 애플리케이션 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/seoul-cyber-app.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>AI 탐지 엔진과 관제 시스템을 연동해야 했습니다.
@@ -597,6 +569,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2020.06 ~ 2020.10<em>소테리아</em></p>
         <h3>전자정부프레임워크 기반 취약점 진단 웹 페이지 개발</h3>
         <p class="proj-deck">학습 데이터를 얻으려고 일부러 취약한 환경을 만든 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/vuln-diagnosis.png" alt="취약점 진단 웹 페이지 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/vuln-diagnosis.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>딥러닝 탐지 모델을 학습시키려면 비정상 행위 데이터가 필요한데,
@@ -615,6 +591,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2020.01 ~ 2020.04<em>시큐브</em></p>
         <h3>멀티모달 인증 시스템 개발</h3>
         <p class="proj-deck">인증 수단이 늘어날 것을 전제로 프로토콜부터 잡은 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/multimodal-auth.png" alt="멀티모달 인증 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/multimodal-auth.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>서명 인증을 다른 인증 수단과 함께 묶는 시스템이었습니다.
@@ -633,6 +613,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.12 ~ 2020.06<em>시큐브</em></p>
         <h3>OTP 인증 웹 관리 콘솔 개발</h3>
         <p class="proj-deck">납품처마다 DB가 다른 제품을 다룬 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/otp-console.png" alt="OTP 인증 관리 콘솔 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/otp-console.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>인증 솔루션이 고객사 환경에 따라 MySQL · Oracle · Tibero 위에서 돌아야 했습니다.
@@ -650,6 +634,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.03 ~ 2020.06<em>시큐브</em></p>
         <h3>인증 솔루션 연동 데모 사이트 개발</h3>
         <p class="proj-deck">제품을 설명하는 대신 직접 보여주게 만든 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/demo-site.png" alt="인증 연동 데모 사이트 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/demo-site.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>인증 솔루션은 문서로 설명하기 어려운 제품이었습니다.
@@ -668,6 +656,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.02 ~ 2020.06<em>시큐브</em></p>
         <h3>서명 수집 · 분석 시스템 개발</h3>
         <p class="proj-deck">쌓이는 데이터의 성격에 맞게 저장소를 옮긴 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/signature-analysis.png" alt="서명 수집 · 분석 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/signature-analysis.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>앱과 태블릿에서 수집되는 서명 데이터가 계속 늘어나는데,
@@ -688,6 +680,10 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2017.06 ~ 2018.08<em>시큐브</em></p>
         <h3>고객사 인증 시스템 구축</h3>
         <p class="proj-deck">같은 코드베이스로 서로 다른 기관 요건을 맞춘 경우</p>
+        <figure class="shot">
+          <!-- <img src="shots/customer-deploy.png" alt="고객사 인증 시스템 화면 캡처"> -->
+          <figcaption>제품 UI 캡처 위치<br><code>shots/customer-deploy.png</code></figcaption>
+        </figure>
         <dl class="qa">
           <dt>문제</dt>
           <dd>공공 · 금융 고객사가 연달아 인증 시스템을 도입했는데, 기관마다 요구하는 정책과 운영 환경이 달랐습니다.
