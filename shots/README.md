@@ -48,6 +48,8 @@
 | `personal-koosi-edu.png` ✅ | 개인 프로젝트 — 한국안전원(주) 에듀센터 |
 | `personal-koosi-qr.png` ✅ | 개인 프로젝트 — 종사자 의견 QR 배포 화면 |
 | `personal-koosi-qr-form.jpg` ✅ | 개인 프로젝트 — QR 스캔 후 의견 등록 화면 (모바일) |
+| `personal-koosi-list01-masked.png` ✅ | 개인 프로젝트 — 종사자 의견 관리 목록 (개인정보 마스킹) |
+| `personal-koosi-list02-masked.png` ✅ | 개인 프로젝트 — 의견 상세 (개인정보 마스킹) |
 
 ✅ 표시는 이미 적용된 이미지입니다.
 
@@ -79,6 +81,20 @@
 
 가리는 편이 안전한 부분은 캡처 단계에서 모자이크 처리하거나, 값을 더미로 바꿔 띄운 화면을 찍는 방법을 권합니다.
 재직 중인 회사의 제품 화면이므로 공개 가능 범위를 회사 쪽에 먼저 확인하시는 편이 좋습니다.
+
+## 마스킹한 캡처
+
+`personal-koosi-list01/02`는 고객사 종사자의 실명 · 휴대폰번호 · 소속회사와 작업자 얼굴 사진이 담겨 있어
+원본을 `.gitignore`로 차단하고 가린 사본만 커밋합니다. 원본은 로컬에만 있습니다.
+
+다시 가려야 할 일이 생기면 Pillow로 처리할 수 있습니다.
+
+```python
+from PIL import Image, ImageDraw
+im = Image.open("shots/원본.png").convert("RGBA")
+ImageDraw.Draw(im).rectangle([x1, y1, x2, y2], fill=(200, 205, 210, 255))
+im.save("shots/원본-masked.png")
+```
 
 ## 권장 사양
 

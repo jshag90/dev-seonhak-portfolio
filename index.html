@@ -140,6 +140,8 @@ main{padding:56px 0 96px;min-width:0}
 .shot a{display:block}
 /* 휴대폰 세로 캡처 — 폭을 제한하지 않으면 본문을 통째로 차지합니다 */
 .shot--phone{max-width:296px}
+/* 세로로 긴 화면 캡처 */
+.shot--narrow{max-width:330px}
 /* 화면이 조밀해 설명이 필요한 캡처는 captioned 를 함께 붙입니다 */
 .shot.captioned:has(img) figcaption{
   display:block;min-height:0;padding:9px 13px;text-align:left;
@@ -826,16 +828,37 @@ main{padding:56px 0 96px;min-width:0}
             <figcaption>QR을 찍으면 바로 열리는 화면입니다. 앱 설치나 로그인 없이 모바일 웹에서 작성합니다.</figcaption>
           </figure>
         </div>
+        <div class="shot-row shot-row--mixed">
+          <figure class="shot captioned">
+            <a href="shots/personal-koosi-list01-masked.png" target="_blank" rel="noopener">
+              <img src="shots/personal-koosi-list01-masked.png" alt="종사자 의견 관리 목록 — 기간 · 사업장 · 회사 검색과 엑셀 다운로드">
+            </a>
+            <figcaption>관리자 목록 화면. 회사 · 부서 · 이름 · 연락처 열은 종사자 개인정보라 가렸습니다.</figcaption>
+          </figure>
+          <figure class="shot shot--narrow captioned">
+            <a href="shots/personal-koosi-list02-masked.png" target="_blank" rel="noopener">
+              <img src="shots/personal-koosi-list02-masked.png" alt="의견 상세 화면 — 작성자 정보, 의견 분류, 상세 의견, 첨부 이미지">
+            </a>
+            <figcaption>의견 상세. 작성자 정보와 첨부 사진은 가렸습니다.</figcaption>
+          </figure>
+        </div>
         <dl class="qa">
           <dt>구성</dt>
-          <dd>사업장에 부착한 QR을 종사자가 휴대폰으로 찍으면 곧바로 의견 입력 화면으로 연결됩니다.
-              <b>대행사업장 · 민간위탁사업장 · 컨설팅사업장</b> 세 유형의 QR을 따로 발급해,
-              들어온 의견이 어느 유형에서 왔는지 진입 단계에서 나뉩니다.
-              입력 화면은 기본 정보 · 의견 분류 · 상세 의견 세 단으로 나눴고,
-              회사명 옆에 <b>익명 체크</b>를 두어 신원을 밝히지 않고도 제출할 수 있게 했습니다.
-              의견제시사유는 산업재해 · 아차사고 · 안전개선으로, 위험발생유형은 추락 · 충돌 · 협착 · 끼임 · 미끄럼 ·
-              화학물질 · 감전 · 화재 · 기타로 항목을 고정해 선택만으로 분류되게 했습니다.
-              현장 상황은 글로 옮기기 어려운 경우가 많아 <b>사진을 최대 10장까지</b> 붙일 수 있습니다.</dd>
+          <dd>
+            <p>사업장에 부착한 QR을 종사자가 휴대폰으로 찍으면 곧바로 의견 입력 화면으로 연결됩니다.
+               <b>대행사업장 · 민간위탁사업장 · 컨설팅사업장</b> 세 유형의 QR을 따로 발급해,
+               들어온 의견이 어느 유형에서 왔는지 진입 단계에서 나뉩니다.
+               입력 화면은 기본 정보 · 의견 분류 · 상세 의견 세 단으로 나눴고,
+               회사명 옆에 <b>익명 체크</b>를 두어 신원을 밝히지 않고도 제출할 수 있게 했습니다.
+               의견제시사유는 산업재해 · 아차사고 · 안전개선으로, 위험발생유형은 추락 · 충돌 · 협착 · 끼임 · 미끄럼 ·
+               화학물질 · 감전 · 화재 · 기타로 항목을 고정해 선택만으로 분류되게 했습니다.
+               현장 상황은 글로 옮기기 어려운 경우가 많아 <b>사진을 최대 10장까지</b> 붙일 수 있습니다.</p>
+            <p>수집된 의견은 관리자 화면에서 다룹니다. 등록일 · 사업장 · 회사 · 부서 · 작성자 · 제목을 목록으로 보여주고,
+               기간과 사업장 · 회사로 좁히거나 검색어로 찾을 수 있습니다.
+               <b>익명으로 낸 의견은 목록에서도 익명으로 표시</b>되어 관리자도 작성자를 알 수 없습니다.
+               집계나 보고가 필요한 경우를 위해 <b>엑셀 다운로드</b>를 붙였고,
+               상세 화면에서는 작성자 정보 · 의견 분류 · 상세 의견과 첨부 사진을 한 화면에서 확인하고 삭제할 수 있습니다.</p>
+          </dd>
         </dl>
       </article>
     </section>
