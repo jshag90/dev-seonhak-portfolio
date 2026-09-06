@@ -134,6 +134,8 @@ main{padding:56px 0 96px;min-width:0}
 /* 작은 캡처를 나란히 놓을 때 감싸는 그리드 */
 .shot-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
 .shot-row .shot{margin-top:0}
+/* 가로 캡처와 세로 휴대폰 캡처를 한 줄에 놓을 때 — 휴대폰 쪽은 제 폭만 차지 */
+.shot-row--mixed{grid-template-columns:1fr auto;align-items:start}
 /* 클릭하면 원본 크기로 열립니다 */
 .shot a{display:block}
 /* 휴대폰 세로 캡처 — 폭을 제한하지 않으면 본문을 통째로 차지합니다 */
@@ -207,6 +209,7 @@ main{padding:56px 0 96px;min-width:0}
   .qa{grid-template-columns:1fr;gap:2px 0}
   .qa dt{padding-top:.5em}
   .shot figcaption{min-height:130px}
+  .shot-row--mixed{grid-template-columns:1fr}
   .sites-top{flex-direction:column;gap:2px}
   .cred-list li{flex-direction:column;gap:2px}
 }
@@ -809,18 +812,20 @@ main{padding:56px 0 96px;min-width:0}
         <div class="proj-links">
           <a href="https://www.koosi.kr/worker-opinion/qr" target="_blank" rel="noopener">의견 수집 QR →</a>
         </div>
-        <figure class="shot captioned">
-          <a href="shots/personal-koosi-qr.png" target="_blank" rel="noopener">
-            <img src="shots/personal-koosi-qr.png" alt="종사자 의견 수집 QR 배포 화면 — 사업장 유형별 QR 코드">
-          </a>
-          <figcaption>QR 배포 화면. 대행 · 민간위탁 · 컨설팅 세 가지 사업장 유형별로 QR을 따로 두었습니다.</figcaption>
-        </figure>
-        <figure class="shot shot--phone captioned">
-          <a href="shots/personal-koosi-qr-form.jpg" target="_blank" rel="noopener">
-            <img src="shots/personal-koosi-qr-form.jpg" alt="QR을 스캔하면 열리는 의견 등록 화면 — 기본 정보, 의견 분류, 상세 의견과 사진 첨부">
-          </a>
-          <figcaption>QR을 찍으면 바로 열리는 화면입니다. 앱 설치나 로그인 없이 모바일 웹에서 그대로 작성합니다.</figcaption>
-        </figure>
+        <div class="shot-row shot-row--mixed">
+          <figure class="shot captioned">
+            <a href="shots/personal-koosi-qr.png" target="_blank" rel="noopener">
+              <img src="shots/personal-koosi-qr.png" alt="종사자 의견 수집 QR 배포 화면 — 사업장 유형별 QR 코드">
+            </a>
+            <figcaption>QR 배포 화면. 대행 · 민간위탁 · 컨설팅 세 가지 사업장 유형별로 QR을 따로 두었습니다.</figcaption>
+          </figure>
+          <figure class="shot shot--phone captioned">
+            <a href="shots/personal-koosi-qr-form.jpg" target="_blank" rel="noopener">
+              <img src="shots/personal-koosi-qr-form.jpg" alt="QR을 스캔하면 열리는 의견 등록 화면 — 기본 정보, 의견 분류, 상세 의견과 사진 첨부">
+            </a>
+            <figcaption>QR을 찍으면 바로 열리는 화면입니다. 앱 설치나 로그인 없이 모바일 웹에서 작성합니다.</figcaption>
+          </figure>
+        </div>
         <dl class="qa">
           <dt>구성</dt>
           <dd>사업장에 부착한 QR을 종사자가 휴대폰으로 찍으면 곧바로 의견 입력 화면으로 연결됩니다.
