@@ -25,10 +25,8 @@
 |---|---|
 | `ransomware-model.png` | 랜섬웨어 탐지 모델 고도화 |
 | `malware-analysis.png` | 악성코드 통합 분석 기능 개발 |
-| `pe-similarity-engine.png` | PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발 |
-| `rust-encoder.png` | Rust 네이티브 인코더 전환 |
-| `rag-docstory.png` | 공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) |
-| `mcp-server.png` | MCP 서버 구축 및 도구 연동 |
+| `pe-similarity-engine.png` | PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발 (Rust 네이티브 인코더 전환 포함) |
+| `rag-docstory.png` | 공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) (MCP 서버 구축 및 도구 연동 포함) |
 | `ml-predict-api.png` | PE 정적 파일 학습 데이터 기반 악성코드 예측 머신러닝 서버 개발 |
 | `dept-policy.png` | 인사 DB 연동 기반 부서별 솔루션 정책 관리 기능 개발 |
 | `log-query-perf.png` | 디자인 패턴 적용 및 성능 개선 리팩터링, 테스트 코드 작성 |
