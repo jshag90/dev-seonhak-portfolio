@@ -100,7 +100,7 @@ main{padding:56px 0 96px;min-width:0}
 .qa b{font-weight:600;color:var(--signal)}
 .qa code{font-family:var(--mono);font-size:.85em;background:var(--card);border:1px solid var(--rule-soft);border-radius:2px;padding:1px 5px}
 
-/* 저장소 · 데모 링크 (개인 프로젝트용) */
+/* 사이트 · 저장소 링크와 기술 스택 한 줄 (외주 개발 항목용) */
 .proj-links{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
 .proj-links a{
   text-decoration:none;font-size:.8rem;color:var(--signal);
@@ -235,7 +235,7 @@ main{padding:56px 0 96px;min-width:0}
         <a href="#ml">머신러닝/RAG</a>
         <a href="#backend">보안 제품 백엔드</a>
         <a href="#auth">인증 · 관제 제품</a>
-        <a href="#personal">개인 프로젝트</a>
+        <a href="#personal">외주 개발</a>
         <a href="#credentials">학력 · 자격 · 수상</a>
       </nav>
       <div class="rail-contact">
@@ -746,50 +746,80 @@ main{padding:56px 0 96px;min-width:0}
       </article>
     </section>
 
-    <!-- ══ 개인 프로젝트 ══════════════════════════════════
-         아래 draft 안내 박스를 지우고, 그 밑 주석 처리된
-         article 템플릿을 프로젝트 수만큼 복사해 채우면 됩니다.
-         회사 프로젝트와 같은 문제 / 판단 / 확인 형식입니다.
+    <!-- ══ 외주 개발 ═════════════════════════════════════
+         아래 세 항목의 문제 / 판단 / 확인은 본인만 아는 내용이라
+         비워 두었습니다. 회사 프로젝트와 같은 형식으로 채우면 됩니다.
     ═══════════════════════════════════════════════════════ -->
     <section class="block" id="personal">
       <div class="block-head">
-        <h2>개인 프로젝트</h2>
-        <span>회사 밖에서 만든 것</span>
+        <h2>외주 개발</h2>
+        <span>지인 회사 홈페이지 · 시스템</span>
       </div>
 
-      <!-- ▼ 내용을 채운 뒤 이 박스는 지워 주세요 ▼ -->
-      <div class="draft">
-        <p class="draft-label">작성 예정</p>
-        <p class="draft-body">
-          개인적으로 만든 프로젝트를 정리하는 자리입니다.
-          아래 HTML 주석 안에 템플릿이 들어 있습니다.
-        </p>
-      </div>
-      <!-- ▲ 여기까지 지우기 ▲ -->
-
-      <!-- ▼ 템플릿: 주석을 풀고 채우세요. 프로젝트마다 하나씩 복사 ▼
       <article class="proj">
-        <p class="proj-when">2025.03 ~ 2025.06<em>개인 프로젝트</em></p>
-        <h3>프로젝트 이름</h3>
-        <p class="proj-deck">한 줄 요약 — 무엇을 판단한 경우인지</p>
-        <p class="proj-stack">Python · FastAPI · PostgreSQL</p>
+        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <h3>한국안전원(주) 웹사이트</h3>
+        <p class="proj-deck">고용노동부 지정 안전관리전문기관의 대외 홈페이지</p>
         <div class="proj-links">
-          <a href="https://github.com/jshag90/저장소이름" target="_blank" rel="noopener">저장소 →</a>
-          <a href="https://데모주소" target="_blank" rel="noopener">데모 →</a>
+          <a href="https://www.koosi.kr/" target="_blank" rel="noopener">www.koosi.kr →</a>
         </div>
-        <figure class="shot">
-          <img src="shots/personal-01.png" alt="화면 캡처 설명">
+        <figure class="shot captioned">
+          <a href="shots/personal-koosi-main.png" target="_blank" rel="noopener">
+            <img src="shots/personal-koosi-main.png" alt="한국안전원 웹사이트 메인 — 상단 메뉴, 회원 로그인, 공지 · 재해속보 · 문의 게시판">
+          </a>
+          <figcaption>메인 화면. 회원 로그인과 세 개의 게시판, 사업 영역 바로가기를 한 화면에 두었습니다.</figcaption>
         </figure>
         <dl class="qa">
-          <dt>문제</dt>
-          <dd>무엇이 불편했고 왜 직접 만들기로 했는지 씁니다.</dd>
-          <dt>판단</dt>
-          <dd>어떤 대안을 비교했고 무엇을 기준으로 골랐는지 씁니다.</dd>
-          <dt>확인</dt>
-          <dd>무엇으로 됐다고 판단했는지 씁니다. 수치가 있으면 함께 적습니다.</dd>
+          <dt>구성</dt>
+          <dd>회사소개 · 사업안내 · 자료실 · 커뮤니티 · 교육지원으로 메뉴를 나누고 회원 가입과 로그인, ID/PW 찾기를 붙였습니다.
+              커뮤니티는 공지사항 · 재해속보 · 갤러리 · 문의사항 게시판으로 구성했고,
+              자료실에는 교육자료 · 안전표지 · 서식 · 기술지도자료를 올립니다.
+              교육지원에서 에듀센터로 넘어가거나 <b>수료증을 조회 · 출력</b>할 수 있습니다.</dd>
         </dl>
       </article>
-      ▲ 템플릿 끝 ▲ -->
+
+      <article class="proj">
+        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <h3>한국안전원(주) 에듀센터</h3>
+        <p class="proj-deck">안전보건교육 수강과 이수를 관리하는 LMS</p>
+        <div class="proj-links">
+          <a href="https://edu.koosi.kr/" target="_blank" rel="noopener">edu.koosi.kr →</a>
+        </div>
+        <figure class="shot captioned">
+          <a href="shots/personal-koosi-edu.png" target="_blank" rel="noopener">
+            <img src="shots/personal-koosi-edu.png" alt="에듀센터 메인 — 집체교육과 인터넷교육 수강신청 영역">
+          </a>
+          <figcaption>메인 화면. 집체교육과 인터넷교육을 나눠 수강신청 가능한 과정을 보여줍니다.</figcaption>
+        </figure>
+        <dl class="qa">
+          <dt>구성</dt>
+          <dd>집체교육(관리감독자 제조업 · 기타업)과 인터넷교육(근로자 정기교육, 채용 시 교육, 작업내용 변경 시 교육, 관리감독자 교육)을
+              나눠 수강 안내와 신청을 받습니다.
+              학습자에게는 마이페이지의 <b>나의 강의실</b>과 개인정보 관리를 제공하고,
+              기관 관리자에게는 계약기관 · 사용자 관리, 교육과정 관리, <b>수료증 양식 관리</b>, 홈페이지 관리를 제공합니다.</dd>
+        </dl>
+      </article>
+
+      <article class="proj">
+        <p class="proj-when">외주<em>한국안전원(주)</em></p>
+        <h3>종사자 의견 QR 수집시스템</h3>
+        <p class="proj-deck">현장 종사자가 QR을 찍어 바로 의견을 남기는 수집 창구</p>
+        <div class="proj-links">
+          <a href="https://www.koosi.kr/worker-opinion/qr" target="_blank" rel="noopener">의견 수집 QR →</a>
+        </div>
+        <figure class="shot captioned">
+          <a href="shots/personal-koosi-qr.png" target="_blank" rel="noopener">
+            <img src="shots/personal-koosi-qr.png" alt="종사자 의견 수집 QR 배포 화면 — 사업장 유형별 QR 코드">
+          </a>
+          <figcaption>QR 배포 화면. 대행 · 민간위탁 · 컨설팅 세 가지 사업장 유형별로 QR을 따로 두었습니다.</figcaption>
+        </figure>
+        <dl class="qa">
+          <dt>구성</dt>
+          <dd>사업장에 부착한 QR을 종사자가 휴대폰으로 찍으면 곧바로 의견 입력 화면으로 연결됩니다.
+              <b>대행사업장 · 민간위탁사업장 · 컨설팅사업장</b> 세 유형의 QR을 따로 발급해,
+              들어온 의견이 어느 유형에서 왔는지 진입 단계에서 나뉩니다.</dd>
+        </dl>
+      </article>
     </section>
 
     <!-- ══ 학력 · 자격 · 수상 ═════════════════════════════ -->
