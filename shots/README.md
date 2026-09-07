@@ -1,23 +1,28 @@
 # 제품 UI 캡처 이미지
 
-이 폴더에 캡처 파일을 올리고, `index.html`에서 해당 항목의 `<img>` 주석만 풀면 됩니다.
-안내 문구(점선 상자)는 이미지가 들어오면 자동으로 사라집니다.
+이 폴더에 캡처 파일을 올리고, `index.html`의 해당 항목에 `figure.shot` 블록을 넣으면 됩니다.
+
+비어 있던 점선 자리표시자는 모두 제거했습니다. 이미지가 없는 항목에는 아무것도 표시되지 않습니다.
+새로 넣으려면 아래를 해당 `<article>` 안, `<h3>`나 `<dl class="qa">` 뒤에 붙입니다.
 
 ```html
 <figure class="shot">
-  <!-- <img src="shots/ransomware-model.png" alt="랜섬웨어 탐지 모델 화면 캡처"> -->
-  <figcaption>제품 UI 캡처 위치<br><code>shots/ransomware-model.png</code></figcaption>
+  <img src="shots/파일명.png" alt="화면 설명">
 </figure>
 ```
 
-위 주석 기호(`<!--`, `-->`)를 지우면 이렇게 됩니다.
+화면이 조밀해 설명이 필요하면 `captioned`를 붙이고, 원본을 열 수 있게 링크로 감쌉니다.
 
 ```html
-<figure class="shot">
-  <img src="shots/ransomware-model.png" alt="랜섬웨어 탐지 모델 화면 캡처">
-  <figcaption>제품 UI 캡처 위치<br><code>shots/ransomware-model.png</code></figcaption>
+<figure class="shot captioned">
+  <a href="shots/파일명.png" target="_blank" rel="noopener">
+    <img src="shots/파일명.png" alt="화면 설명">
+  </a>
+  <figcaption>이 화면이 무엇을 보여주는지 한두 줄.</figcaption>
 </figure>
 ```
+
+세로로 긴 휴대폰 캡처는 `shot--phone`(296px), 그 외 좁게 두고 싶은 캡처는 `shot--narrow`(330px)를 함께 붙입니다.
 
 ## 파일 목록
 
@@ -72,6 +77,9 @@
 | `personal-koosi-list02-masked.png` ✅ | 개인 프로젝트 — 의견 상세 (개인정보 마스킹) |
 
 ✅ 표시는 이미 적용된 이미지입니다. 🔒 표시는 민감 정보를 가린 뒤 올린 이미지입니다.
+
+표시가 없는 줄은 **아직 캡처가 없는 항목**입니다. 파일도 없고 페이지에 자리도 잡혀 있지 않으니,
+넣으려면 파일을 올린 뒤 위 방법대로 `figure.shot` 블록을 직접 추가하면 됩니다.
 
 ## 한 프로젝트에 두 장 이상 넣기
 
