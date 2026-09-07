@@ -26,9 +26,14 @@
 | `training-pipeline-01.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 전처리 판정 대시보드 |
 | `training-pipeline-02.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 학습 대상 샘플 목록 |
 | `training-pipeline-03.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 재학습 워크플로우 |
-| `malware-analysis.png` | 악성코드 통합 분석 기능 개발 |
+| `malware-analysis.png` ✅ | 악성코드 통합 분석 기능 개발 — 종합 판단 화면 |
 | `pe-similarity-engine.png` | PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발 (Rust 네이티브 인코더 전환 포함) |
-| `rag-docstory.png` | 공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) (MCP 서버 구축 및 도구 연동 포함) |
+| `rag-chat-01~04.png` ✅ | RAG 에이전트 — 문서 질의응답과 원문 대조 화면 |
+| `rag-app-ui.png` ✅ | RAG 에이전트 — 데스크톱 앱 UI |
+| `rag-ingest-flow.svg` ✅ | RAG 에이전트 — 수집 · 청킹 · 임베딩 · 저장 프로세스 |
+| `rag-query-flow.svg` ✅ | RAG 에이전트 — 검색 · MCP 도구 호출 · 응답 프로세스 |
+| `mcp-docstory.png` ✅ | RAG 에이전트 — DocStory MCP 연결 및 화이트리스트 조회 |
+| `mcp-virustotal.png` ✅ | RAG 에이전트 — VirusTotal MCP 연결 및 해시 분석 |
 | `ml-predict-api.png` | PE 정적 파일 학습 데이터 기반 악성코드 예측 머신러닝 서버 개발 |
 | `dept-policy.png` | 인사 DB 연동 기반 부서별 솔루션 정책 관리 기능 개발 |
 | `log-query-perf.png` | 디자인 패턴 적용 및 성능 개선 리팩터링, 테스트 코드 작성 |

@@ -136,6 +136,7 @@ main{padding:56px 0 96px;min-width:0}
 .shot-row .shot{margin-top:0}
 /* 가로 캡처와 세로 휴대폰 캡처를 한 줄에 놓을 때 — 휴대폰 쪽은 제 폭만 차지 */
 .shot-row--mixed{grid-template-columns:1fr auto;align-items:start}
+.shot-row--diagrams{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 /* 클릭하면 원본 크기로 열립니다 */
 .shot a{display:block}
 /* 휴대폰 세로 캡처 — 폭을 제한하지 않으면 본문을 통째로 차지합니다 */
@@ -212,6 +213,7 @@ main{padding:56px 0 96px;min-width:0}
   .qa dt{padding-top:.5em}
   .shot figcaption{min-height:130px}
   .shot-row--mixed{grid-template-columns:1fr}
+  .shot-row--diagrams{grid-template-columns:1fr}
   .sites-top{flex-direction:column;gap:2px}
   .cred-list li{flex-direction:column;gap:2px}
 }
@@ -232,8 +234,7 @@ main{padding:56px 0 96px;min-width:0}
   ═══════════════════════════════════════════════════════ -->
   <aside class="rail">
     <div class="photo">
-      <!-- <img src="profile.jpg" alt="지선학 프로필 사진"> -->
-      사진 위치<br>profile.jpg
+      <img src="profile.jpg" alt="지선학 프로필 사진">
     </div>
     <div>
       <p class="rail-name">지선학</p>
@@ -327,9 +328,12 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2026.06 ~ 현재<em>에스엠테크놀러지</em></p>
         <h3>악성코드 통합 분석 기능 개발</h3>
         <p class="proj-deck">확률 하나로는 왜 차단했는지 설명할 수 없었던 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/malware-analysis.png" alt="악성코드 통합 분석 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/malware-analysis.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/malware-analysis.png" target="_blank" rel="noopener">
+            <img src="shots/malware-analysis.png" alt="악성코드 종합 판단 화면 — 다중 지표 판정 근거와 유사 사례 Top-20 목록">
+          </a>
+          <figcaption>종합 판단 화면. 왼쪽에 ML 탐지 점수 · 이상치 · 악성 무리 근접도 · 동적 분석 · MITRE ATT&amp;CK를
+            판정 근거로 펼쳐 두고, 오른쪽에 유사 사례 Top-20과 그 이웃들의 공통 행위를 함께 보여줍니다.</figcaption>
         </figure>
         <dl class="qa">
           <dt>문제</dt>
@@ -389,10 +393,66 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2025.11 ~ 2026.02<em>에스엠테크놀러지</em></p>
         <h3>공공기관 문서 관리용 RAG AI 에이전트(DocStory Insight) 설계 및 개발</h3>
         <p class="proj-deck">폐쇄망과 소형 모델이라는 제약 안에서 정확도를 올린 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/rag-docstory.png" alt="DocStory Insight 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/rag-docstory.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/rag-chat-01.png" target="_blank" rel="noopener">
+            <img src="shots/rag-chat-01.png" alt="DocStory Insight 문서 기반 AI 대화 화면과 응답 요약">
+          </a>
+          <figcaption>문서 청크를 근거로 회의록 내용을 요약하고, 참고 문서 점수와 함께 응답하는 대표 화면입니다.</figcaption>
         </figure>
+        <div class="shot-row">
+          <figure class="shot captioned">
+            <a href="shots/rag-chat-02.png" target="_blank" rel="noopener">
+              <img src="shots/rag-chat-02.png" alt="DocStory Insight 회의록 요약과 원문 문서 비교 화면">
+            </a>
+            <figcaption>AI 요약 결과와 원문 문서를 나란히 확인하는 응답 근거 화면</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/rag-chat-03.png" target="_blank" rel="noopener">
+              <img src="shots/rag-chat-03.png" alt="DocStory Insight 회의 개식 순서 요약 화면">
+            </a>
+            <figcaption>회의록의 개회식 순서와 주요 내용을 구조화해 보여주는 사례</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/rag-chat-04.png" target="_blank" rel="noopener">
+              <img src="shots/rag-chat-04.png" alt="DocStory Insight 긴 문서 편집 화면과 요약 응답">
+            </a>
+            <figcaption>긴 문서의 특정 페이지를 확인하면서 필요한 부분을 질의하는 흐름</figcaption>
+          </figure>
+        </div>
+        <figure class="shot captioned">
+          <a href="shots/rag-app-ui.png" target="_blank" rel="noopener">
+            <img src="shots/rag-app-ui.png" alt="DocStory Insight AI 대화 제품 UI">
+          </a>
+          <figcaption>지식 베이스, 시스템 상태, 정책 메뉴를 포함한 제품형 AI 대화 UI입니다.</figcaption>
+        </figure>
+        <div class="shot-row">
+          <figure class="shot captioned">
+            <a href="shots/mcp-docstory.png" target="_blank" rel="noopener">
+              <img src="shots/mcp-docstory.png" alt="DocStory MCP 연결과 화이트리스트 조회 화면">
+            </a>
+            <figcaption>DocStory MCP를 통해 솔루션 화이트리스트 정보를 조회하는 화면</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/mcp-virustotal.png" target="_blank" rel="noopener">
+              <img src="shots/mcp-virustotal.png" alt="VirusTotal MCP 연결과 해시 분석 결과 화면">
+            </a>
+            <figcaption>VirusTotal MCP를 호출해 파일 해시 분석 결과를 응답에 반영하는 화면</figcaption>
+          </figure>
+        </div>
+        <div class="shot-row shot-row--diagrams">
+          <figure class="shot captioned">
+            <a href="shots/rag-ingest-flow.svg" target="_blank" rel="noopener">
+              <img src="shots/rag-ingest-flow.svg" alt="DocStory 문서 수집, 청킹, 임베딩, 저장 프로세스 플로차트">
+            </a>
+            <figcaption>문서 제목 추출부터 청킹·정제·키워드 추출, 임베딩과 RDB·벡터 DB·검색 DB 저장까지의 처리 흐름</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/rag-query-flow.svg" target="_blank" rel="noopener">
+              <img src="shots/rag-query-flow.svg" alt="DocStory 사용자 질문, 검색, MCP 도구 호출, LLM 응답 대화 프로세스 플로차트">
+            </a>
+            <figcaption>사용자 질문을 검색·재순위화하고 MCP 도구와 LLM을 거쳐 근거와 함께 응답하는 대화 흐름</figcaption>
+          </figure>
+        </div>
         <dl class="qa">
           <dt>문제</dt>
           <dd>공공기관 내부 문서를 다뤄야 해서 외부 API를 쓸 수 없었고, 로컬에서 돌릴 수 있는 소형 모델은
