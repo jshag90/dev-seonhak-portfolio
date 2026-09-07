@@ -550,9 +550,26 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2025.02 ~ 2025.03<em>에스엠테크놀러지</em></p>
         <h3>PE 정적 파일 학습 데이터 기반 악성코드 예측 머신러닝 서버 개발</h3>
         <p class="proj-deck">모델을 바꾸려고 제품을 재배포하지 않게 만든 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/ml-predict-api.png" alt="악성코드 예측 API 서버 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/ml-predict-api.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/docstory-ai-settings.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-ai-settings.png" alt="솔루션 운영환경 설정 — 모델 파일 경로와 AI 악성 판별 기준값">
+          </a>
+          <figcaption>솔루션 쪽 연동 지점. 모델 파일 경로와 <b>AI 악성 판별 기준값(Threshold)</b>을 운영환경에서 지정하고,
+            자동 화이트리스트를 켜면 이 기준으로 판정 결과가 반영됩니다. 모델을 바꿔도 여기 값만 건드리면 됩니다.</figcaption>
+        </figure>
+        <figure class="shot captioned">
+          <a href="shots/docstory-whitelist.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-whitelist.png" alt="화이트리스트 목록 — 프로세스 경로별 AI 자동 · 수동 구분">
+          </a>
+          <figcaption>판정 결과가 반영된 화이트리스트. <code>AI</code> 열의 자동 · 수동으로,
+            예측 score가 기준을 넘어 자동 전환된 항목과 사람이 직접 넣은 항목이 구분됩니다.</figcaption>
+        </figure>
+        <figure class="shot captioned">
+          <a href="shots/docstory-score-detail.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-score-detail.png" alt="예측 상세 — score와 EMBER 정적 피처 히스토그램, 바이트 엔트로피">
+          </a>
+          <figcaption>개별 파일의 예측 상세. 반환된 score와 함께 EMBER 정적 피처(히스토그램 · 바이트 엔트로피)를 펼쳐,
+            왜 그 값이 나왔는지 확인할 수 있게 했습니다.</figcaption>
         </figure>
         <dl class="qa">
           <dt>문제</dt>
@@ -580,9 +597,33 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2024.07 ~ 2024.12<em>에스엠테크놀러지</em></p>
         <h3>인사 DB 연동 기반 부서별 솔루션 정책 관리 기능 개발</h3>
         <p class="proj-deck">정책 단위를 바꾸면서 조회 부하가 옮겨간 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/dept-policy.png" alt="부서별 정책 관리 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/dept-policy.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/docstory-org.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-org.png" alt="조직 관리 — 인사 DB에서 동기화한 조직 트리와 조직코드별 클라이언트">
+          </a>
+          <figcaption>인사 DB에서 주기적으로 동기화한 조직 트리입니다. 클라이언트마다 소속 조직과 조직코드,
+            적용된 템플릿을 함께 보여줍니다. 이름 한 건은 실명이라 가렸습니다.</figcaption>
+        </figure>
+        <div class="shot-row">
+          <figure class="shot captioned">
+            <a href="shots/docstory-org-select.png" target="_blank" rel="noopener">
+              <img src="shots/docstory-org-select.png" alt="조직 선택 — 정책을 적용할 부서를 트리에서 고르는 화면">
+            </a>
+            <figcaption>정책을 걸 부서를 트리에서 고릅니다. 클라이언트를 하나씩 지정하던 방식이 여기로 바뀌었습니다.</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/docstory-template-apply.png" target="_blank" rel="noopener">
+              <img src="shots/docstory-template-apply.png" alt="템플릿 적용 — 템플릿과 조직을 짝지어 일괄 적용">
+            </a>
+            <figcaption>템플릿과 조직을 짝지어 한 번에 적용합니다. 조직 27개를 한 번에 선택한 상태입니다.</figcaption>
+          </figure>
+        </div>
+        <figure class="shot captioned">
+          <a href="shots/docstory-template.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-template.png" alt="템플릿 정보 — 운영환경 설정과 보호 확장자 그룹">
+          </a>
+          <figcaption>부서에 걸리는 정책의 내용. 팝업 표시 같은 운영환경 값과 보호 확장자를 그룹 단위로 묶어 두어,
+            부서마다 다른 조합을 만들 수 있습니다.</figcaption>
         </figure>
         <dl class="qa">
           <dt>문제</dt>
@@ -648,9 +689,32 @@ main{padding:56px 0 96px;min-width:0}
         <p class="proj-when">2022.01 ~ 2022.06<em>에스엠테크놀러지</em></p>
         <h3>자사 솔루션 PHP 웹 서버의 Spring Boot 리뉴얼</h3>
         <p class="proj-deck">다시 만들 기회에 확장 지점을 미리 잡은 경우</p>
-        <figure class="shot">
-          <!-- <img src="shots/spring-renewal.png" alt="Spring Boot 리뉴얼 화면 캡처"> -->
-          <figcaption>제품 UI 캡처 위치<br><code>shots/spring-renewal.png</code></figcaption>
+        <figure class="shot captioned">
+          <a href="shots/docstory-dashboard.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-dashboard.png" alt="대시보드 — 서버 용량, 라이선스 현황, 데이터 보호 현황 추이">
+          </a>
+          <figcaption>대시보드. 서버 용량 · 라이선스 · 보호 현황을 한 화면에 모았습니다.
+            요청할 때마다 집계하지 않고 crontab으로 미리 만들어 둔 통계를 읽습니다.</figcaption>
+        </figure>
+        <div class="shot-row">
+          <figure class="shot captioned">
+            <a href="shots/docstory-clients.png" target="_blank" rel="noopener">
+              <img src="shots/docstory-clients.png" alt="클라이언트 정보 — 설치 버전, OS, 빌드, 최초 설치와 접속 확인">
+            </a>
+            <figcaption>클라이언트 정보. 설치 버전과 OS 빌드, 접속 이력을 조직 · 기간으로 좁혀 봅니다.</figcaption>
+          </figure>
+          <figure class="shot captioned">
+            <a href="shots/docstory-auditlog.png" target="_blank" rel="noopener">
+              <img src="shots/docstory-auditlog.png" alt="감사로그 — 데이터 보호 이벤트 목록과 기간 검색">
+            </a>
+            <figcaption>감사로그. 접근 차단 · 종료 같은 이벤트를 기간과 이벤트명으로 조회하고 엑셀로 내려받습니다.</figcaption>
+          </figure>
+        </div>
+        <figure class="shot captioned">
+          <a href="shots/docstory-report.png" target="_blank" rel="noopener">
+            <img src="shots/docstory-report.png" alt="차단 보고서 — 유형별 차단 분류와 해시별 상세 내역">
+          </a>
+          <figcaption>차단 보고서. 유형별 분류와 해시별 상세를 묶어 기간 단위로 내려받을 수 있게 했습니다.</figcaption>
         </figure>
         <dl class="qa">
           <dt>문제</dt>

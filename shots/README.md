@@ -41,11 +41,19 @@
 | `rag-query-flow.svg` ✅ | RAG 에이전트 — 검색 · MCP 도구 호출 · 응답 프로세스 |
 | `mcp-docstory.png` ✅ | RAG 에이전트 — DocStory MCP 연결 및 화이트리스트 조회 |
 | `mcp-virustotal.png` ✅ | RAG 에이전트 — VirusTotal MCP 연결 및 해시 분석 |
-| `ml-predict-api.png` | PE 정적 파일 학습 데이터 기반 악성코드 예측 머신러닝 서버 개발 |
-| `dept-policy.png` | 인사 DB 연동 기반 부서별 솔루션 정책 관리 기능 개발 |
+| `docstory-ai-settings.png` ✅ | 예측 ML 서버 — 운영환경의 모델 경로와 판별 기준값 |
+| `docstory-whitelist.png` ✅ | 예측 ML 서버 — 화이트리스트 (AI 자동 · 수동 구분) |
+| `docstory-score-detail.png` ✅ | 예측 ML 서버 — 예측 score와 EMBER 정적 피처 상세 |
+| `docstory-org.png` ✅ 🔒 | 부서별 정책 — 조직 관리 (이름 1건 마스킹) |
+| `docstory-org-select.png` ✅ | 부서별 정책 — 조직 선택 |
+| `docstory-template-apply.png` ✅ | 부서별 정책 — 템플릿 적용 |
+| `docstory-template.png` ✅ | 부서별 정책 — 템플릿 내용 |
 | `log-query-perf.png` | 디자인 패턴 적용 및 성능 개선 리팩터링, 테스트 코드 작성 |
 | `devops-gitlab-jenkins.png` | 백엔드 팀 개발 환경 개선 |
-| `spring-renewal.png` | 자사 솔루션 PHP 웹 서버의 Spring Boot 리뉴얼 |
+| `docstory-dashboard.png` ✅ | Spring Boot 리뉴얼 — 대시보드 (crontab 통계) |
+| `docstory-clients.png` ✅ | Spring Boot 리뉴얼 — 클라이언트 정보 |
+| `docstory-auditlog.png` ✅ | Spring Boot 리뉴얼 — 감사로그 |
+| `docstory-report.png` ✅ | Spring Boot 리뉴얼 — 차단 보고서 |
 | `security-verification.png` | 자사 솔루션 국정원 보안적합성 검증 시험 프로젝트 |
 | `seoul-cyber-app.png` | 서울사이버안전센터 실증사업 (침해 대응 애플리케이션) |
 | `vuln-diagnosis.png` | 전자정부프레임워크 기반 취약점 진단 웹 페이지 개발 |
