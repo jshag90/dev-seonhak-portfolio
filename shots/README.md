@@ -27,6 +27,13 @@
 | `training-pipeline-02.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 학습 대상 샘플 목록 |
 | `training-pipeline-03.png` ✅ | 랜섬웨어 탐지 모델 학습 파이프라인 고도화 — 재학습 워크플로우 |
 | `malware-analysis.png` ✅ | 악성코드 통합 분석 기능 개발 — 종합 판단 화면 |
+| `prompt-agent-download.png` ✅ 🔒 | 프롬프트 수집 에이전트 — 배포 화면 (API 키 마스킹) |
+| `prompt-agent-install-01.png` ✅ | 프롬프트 수집 에이전트 — 설치 콘솔 |
+| `prompt-agent-install-02.png` ✅ 🔒 | 프롬프트 수집 에이전트 — 설치 결과 (계정 이메일 · SID 마스킹) |
+| `prompt-agent-admin-01.png` ✅ | 프롬프트 수집 에이전트 — 사용자별 제출 현황 |
+| `prompt-agent-admin-02.png` ✅ | 프롬프트 수집 에이전트 — 런타임 설정 |
+| `prompt-agent-collect-01.png` ✅ | 프롬프트 수집 에이전트 — 해시별 응답 수집 현황 |
+| `prompt-agent-collect-02.png` ✅ | 프롬프트 수집 에이전트 — LLM 사례 합의 상세 |
 | `pe-similarity-engine.png` | PE 실행파일 유사도 검색 및 MLP 기반 이상치 탐지 엔진 개발 (Rust 네이티브 인코더 전환 포함) |
 | `rag-chat-01~04.png` ✅ | RAG 에이전트 — 문서 질의응답과 원문 대조 화면 |
 | `rag-app-ui.png` ✅ | RAG 에이전트 — 데스크톱 앱 UI |
@@ -56,7 +63,7 @@
 | `personal-koosi-list01-masked.png` ✅ | 개인 프로젝트 — 종사자 의견 관리 목록 (개인정보 마스킹) |
 | `personal-koosi-list02-masked.png` ✅ | 개인 프로젝트 — 의견 상세 (개인정보 마스킹) |
 
-✅ 표시는 이미 적용된 이미지입니다.
+✅ 표시는 이미 적용된 이미지입니다. 🔒 표시는 민감 정보를 가린 뒤 올린 이미지입니다.
 
 ## 한 프로젝트에 두 장 이상 넣기
 
